@@ -49,6 +49,7 @@ void Game()
 {
 	//変数
 	int playerHp = 0;
+	int enemyAttack = 0;
 	//乱数の初期化
 	srand((unsigned int)time(NULL));
 
@@ -66,4 +67,22 @@ void Game()
 	//プレイヤーのHPを表示する
 	cout << "プレイヤーのHPは" << playerHp << "です。" << endl;
 
+	//敵の攻撃
+	enemyAttack = rand() % 101;
+	cout << "敵の攻撃!" << endl;
+	cout << "プレイヤーは" << enemyAttack << "のダメージを受けた!" << endl;
+	//プレイヤーのHPを減らす
+	playerHp -= enemyAttack;
+	//プレイヤーのHPを表示する
+	cout << "プレイヤーのHPは" << playerHp << "です。" << endl;
+	//プレイヤーのHPが0以下の場合、ゲームオーバー
+	if (playerHp <= 0)
+	{
+		cout << "ゲームオーバー" << endl;
+	}
+	else
+	{
+		cout << "ゲームクリア" << endl;
+	}
 }
+
