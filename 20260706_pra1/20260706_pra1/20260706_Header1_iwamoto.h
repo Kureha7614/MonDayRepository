@@ -1,6 +1,6 @@
 #pragma once
-const int Max = 1;
-const int Min = 0;
+const int Max = 2;
+const int Min = 1;
 const int PlayerMaxHp = 100;
 const int HealAmount = 20;
 

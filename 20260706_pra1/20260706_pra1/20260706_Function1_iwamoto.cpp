@@ -31,7 +31,7 @@ void Heal(int& Hp)
 	//変数
 	int choice;
 
-	cout << "回復しますか？？（Yes：1、No：0）" << endl;
+	cout << "回復しますか？？（Yes：1、No：2）" << endl;
 	choice = InputChoise(Min, Max);
 	if (choice == 1)
 	{
