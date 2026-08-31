@@ -1,23 +1,21 @@
 #include <iostream>
-#include "VendingManchine.h"
+#include <string>
+#include"20280831_Prac1_iwamoto.h"
 using namespace std;
 
-int main(void)
+
+
+int main() 
 {
-	//コンストラクタ
-	VendingManchine machine;
-	cout << "お金を投入してください。\n";
-	int insertMoney;
-	cin >> insertMoney;
+    BankAccount account("Alice", 5000.0);
 
-	machine.insertMoney(insertMoney);
-	machine.buyCola();
+    account.displayAccountInfo();
 
-	cout << "残金：" << machine.getMoney() << "円\n";
-	cout << "残りのコーラの在庫：" << machine.getColaStock() << "本\n";
+    account.deposit(1000.0);
+    account.withdraw(2000.0);
+    account.withdraw(5000.0); // 残高不足で失敗
 
+    account.displayAccountInfo();
 
-
-
-	return 0;
+    return 0;
 }
