@@ -5,7 +5,7 @@
 Player::Player()
 {
 	//初期化
-	Score = INIT_SCORE;
+	PlayerScore = INIT_SCORE;
 }
 
 Player::~Player()
@@ -35,6 +35,6 @@ int Player::inputDraw()
 
 void Player::addScore(int add)
 {
-	Score += add;
+	PlayerScore += add;
 }
 
