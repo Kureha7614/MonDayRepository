@@ -1,5 +1,7 @@
 #pragma once
 
+//初期スコア
+const int INIT_SCORE = 0;
 //勝利得点
 const int WIN_SCORE = 21;
 //バースト得点
@@ -20,6 +22,6 @@ const int CARD_TOTAL = 44;
 const int INIT_CARD = 2;
 
 //ぷれいやーの入力
-//1:引く :0引かない
-const int INPUT_DRAW = 1;
-const int INPUT_NOT_DRAW = 0;
+//0:引く :1引かない
+const int INPUT_DRAW = 0;
+const int INPUT_NOT_DRAW = 1;
