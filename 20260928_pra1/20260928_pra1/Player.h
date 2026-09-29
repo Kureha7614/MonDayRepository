@@ -1,5 +1,6 @@
 #pragma once
 #include "config.h"
+#include <iostream>
 
 class Player
 {
@@ -9,6 +10,7 @@ private:
 	//プレイヤーの得点
 	int PlayerScore;
 public:
+	
 	//コンストラクタ
 	Player();
 	~Player();
