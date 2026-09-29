@@ -1,22 +1,72 @@
 #include "Turn.h"
-#include"config.h"
+#include <iostream>
 
 Turn::Turn()
 {
-
 }
 
-void Turn::PlayerTurn(Player* player)
+void Turn::PlayerTurn(Player* player, CardManager& cardManager)
 {
-	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¿ãƒ¼ãƒ³
-	//ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã‹å¼•ã‹ãªã„ã‹ã®å…¥åŠ›
-	int choice = player->inputDraw();
+    //ƒvƒŒƒCƒ„[‚Ìƒ^[ƒ“
+    std::cout << "\n--- Player‚Ìƒ^[ƒ“ ---\n";
+    while (true)
+    {
+        //ğŒ•ªŠò
+        if (player->isTwentyOne())
+        {
+            std::cout << "Player‚Í21‚Å‚·Bƒ^[ƒ“‚ğI—¹‚µ‚Ü‚·B\n";
+            return;
+        }
+        if (player->isBurst())
+        {
+            std::cout << "Player‚ªƒo[ƒXƒg‚µ‚Ü‚µ‚½B\n";
+            return;
+        }
 
+        std::cout << "Player‚Ì‡ŒvF" << player->getScore()
+                  << "\nƒJ[ƒh‚ğˆø‚«‚Ü‚·‚©H\n0FYes\n1FNo\n> " << std::flush;
+        //ƒJ[ƒh‚ğˆø‚­‚©ˆø‚©‚È‚¢‚©‚Ì“ü—Í
+        int choice = player->inputDraw();
+        //“ü—Í‚É‰‚¶‚½ˆ—
+        if (choice == INPUT_DRAW)
+        {
+            //ƒJ[ƒh‚ğˆø‚­ê‡‚Ìˆ—
+            int drawnCard = cardManager.drawCard();
+            player->addScore(drawnCard);
+            std::cout << "Player‚ªˆø‚¢‚½ƒJ[ƒhF" << drawnCard
+                      << " / ‡ŒvF" << player->getScore() << "\n";
+        }
+        else if (choice == INPUT_NOT_DRAW)
+        {
+            //ƒJ[ƒh‚ğˆø‚©‚È‚¢ê‡‚Ìˆ—
+            std::cout << "Player‚ÍƒJ[ƒh‚ğˆø‚©‚¸‚Éƒ^[ƒ“‚ğI—¹‚µ‚Ü‚·B\n";
+            return;
+        }
+        else
+        {
+            std::cout << "–³Œø‚È“ü—Í‚Å‚·B0‚©1‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B\n";
+        }
+    }
 }
 
-void Turn::CpuTurn(CPU* cpu, Player* player)
+void Turn::CpuTurn(CPU* cpu, Player* player, CardManager& cardManager)
 {
-	//CPUã®ã‚¿ãƒ¼ãƒ³
-	//ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã‹å¼•ã‹ãªã„ã‹ã®å…¥åŠ›
-	int CpuChoice = cpu->isDraw(player->getScore());
+    //CPU‚Ìƒ^[ƒ“
+    std::cout << "\n--- CPU‚Ìƒ^[ƒ“ ---\n";
+    //ƒJ[ƒh‚ğˆø‚­‚©ˆø‚©‚È‚¢‚©‚Ì”»’f
+    while (cpu->isDraw(player->getScore()))
+    {
+        int drawnCard = cardManager.drawCard();
+        cpu->addScore(drawnCard);
+        std::cout << "CPU‚ªˆø‚¢‚½ƒJ[ƒhF" << drawnCard
+                  << " / ‡ŒvF" << cpu->getScore() << "\n";
+    }
+    if (cpu->isBurst())
+    {
+        std::cout << "CPU‚ªƒo[ƒXƒg‚µ‚Ü‚µ‚½B\n";
+    }
+    else
+    {
+        std::cout << "CPU‚Í‡Œv" << cpu->getScore() << "‚Åƒ^[ƒ“‚ğI—¹‚µ‚Ü‚·B\n";
+    }
 }

@@ -1,21 +1,20 @@
 #pragma once
-#include"config.h"
+#include "config.h"
+
 class CardManager
 {
-public:
-	CardManager();
-	~CardManager();
 private:
-	//ã‚«ãƒ¼ãƒ‰ã®é…åˆ—
-	int Card[CARD_TOTAL];
-	int CardIndex;
+    //ƒJ[ƒh‚Ì”z—ñ
+    int Card[CARD_TOTAL];
+    // Ÿ‚Éæ‚èo‚·ƒJ[ƒh‚ÌˆÊ’u
+    int CardIndex;
 public:
-	//ã‚«ãƒ¼ãƒ‰ã®åˆæœŸåŒ–
-	void initializeCards();
-	//ã‚«ãƒ¼ãƒ‰ã®ã‚·ãƒ£ãƒƒãƒ•ãƒ«
-	void shuffleCards();
-	//è¿½åŠ ã®ä¸€æšã‚’å¼•ã
-	int drawCard();
-
+    CardManager();
+    ~CardManager();
+    //ƒJ[ƒh‚Ì‰Šú‰»
+    void initializeCards();
+    //ƒJ[ƒh‚ÌƒVƒƒƒbƒtƒ‹
+    void shuffleCards();
+    //’Ç‰Á‚Ìˆê–‡‚ğˆø‚­
+    int drawCard();
 };
-

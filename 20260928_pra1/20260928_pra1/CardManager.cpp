@@ -1,10 +1,10 @@
 #include "CardManager.h"
-#include "config.h"
 #include <cstdlib>
-#include <ctime>
+#include <stdexcept>
 
 CardManager::CardManager()
 {
+    initializeCards();
 }
 
 CardManager::~CardManager()
@@ -13,32 +13,37 @@ CardManager::~CardManager()
 
 void CardManager::initializeCards()
 {
-    CardIndex = INIT_SCORE;
-    // ã‚«ãƒ¼ãƒ‰ã®æ•°å­—ã‚’åˆæœŸåŒ–
+    // RD‚ğì‚éˆÊ’u‚ÆA”z‚éˆÊ’u‚ğ•ª‚¯‚é
+    int index = 0;
+    // ƒJ[ƒh‚Ì”š‚ğ‰Šú‰»
     for (int i = 0; i < CARD_NUM; i++)
     {
         for (int j = 0; j < MAX_CARD; j++)
         {
-            Card[CardIndex] = j + 1  /* ä»Šã®ã‚«ãƒ¼ãƒ‰ã®æ•°å­— */;
-            CardIndex++;
+            Card[index] = j + MIN_CARD;  /* ¡‚ÌƒJ[ƒh‚Ì”š */
+            index++;
         }
     }
+    CardIndex = 0;
 }
 
 void CardManager::shuffleCards()
 {
-    CardIndex = INIT_SCORE;
-    srand((unsigned int)time(NULL));
-    for (int i = 0; i < CARD_TOTAL; i++)
+    for (int i = CARD_TOTAL - 1; i > 0; i--)
     {
         int shuffleNum = rand() % (i + 1);
         int tmp = Card[i];
         Card[i] = Card[shuffleNum];
         Card[shuffleNum] = tmp;
     }
+    CardIndex = 0;
 }
 
 int CardManager::drawCard()
 {
+    if (CardIndex >= CARD_TOTAL)
+    {
+        throw std::out_of_range("RD‚ÉƒJ[ƒh‚ª‚ ‚è‚Ü‚¹‚ñB");
+    }
     return Card[CardIndex++];
 }

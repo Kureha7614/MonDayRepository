@@ -1,60 +1,48 @@
 #pragma once
 #include "config.h"
+
 class CPU
 {
 private:
-	int  CpuScore;
+    int CpuScore;
 public:
-	//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-	CPU();
-	~CPU();
+    //ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    CPU();
+    ~CPU();
+    //“¾“_‚ğ‰ÁZ
+    void addScore(int add);
 
-	//å¾—ç‚¹ã‚’åŠ ç®—
-	void addScore(int add);
+    //CPU‚ª©“®“I‚ÉƒJ[ƒh‚ğˆø‚­‚©ˆø‚©‚È‚¢‚©‚ğ•Ô‚·
+    bool isDraw(int playerScore) const
+    {
+        //CPU‚Ì“¾“_‚ª21‚Ü‚½‚Í22ˆÈã‚Ìê‡false‚ğ•Ô‚·
+        if (isTwentyOne() || isBurst())
+        {
+            return false;
+        }
+        //CPU‚Ì“¾“_‚ª15ˆÈ‰º‚Ìê‡true‚ğ•Ô‚·
+        if (CpuScore <= CPU_DRAW_SCORE)
+        {
+            return true;
+        }
+        //CPU‚Ì“¾“_‚ª‚Õ‚ê‚¢‚â[‚Ì“¾“_‚æ‚è¬‚³‚¢ê‡true‚ğ•Ô‚·
+        //CPU‚Ì“¾“_‚ª‚Õ‚ê‚¢‚â[ˆÈã‚Ìê‡false‚ğ•Ô‚·
+        return CpuScore < playerScore;
+    }
 
-	//CPUãŒè‡ªå‹•çš„ã«ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã‹å¼•ã‹ãªã„ã‹ã‚’è¿”ã™
-	bool isDraw(int PlayerScore) const
-	{
-		//CPUã®å¾—ç‚¹ãŒ15ä»¥ä¸‹ã®å ´åˆtrueã‚’è¿”ã™
-		if (CpuScore <= CPU_DRAW_SCORE)
-		{
-			return true;
-		}
-		//CPUã®å¾—ç‚¹ãŒã·ã‚Œã„ã‚„ãƒ¼ã®å¾—ç‚¹ã‚ˆã‚Šå°ã•ã„å ´åˆtrueã‚’è¿”ã™
-		else if (CpuScore < PlayerScore)
-		{
-			return true;
-		}
-		//CPUã®å¾—ç‚¹ãŒ21ã®å ´åˆfalseã‚’è¿”ã™
-		else if (CpuScore == WIN_SCORE)
-		{
-			return false;
-		}
-		//CPUã®å¾—ç‚¹ãŒã·ã‚Œã„ã‚„ãƒ¼ä»¥ä¸Šã®å ´åˆfalseã‚’è¿”ã™
-		else
-		{
-			return false;
-		}
-	}
-	
-	
-
-	//CPUã®å¾—ç‚¹ãŒ21ã®å ´åˆtrueã‚’è¿”ã™
-	bool isTwentyOne() const
-	{
-		return CpuScore == WIN_SCORE;
-	}
-
-	//CPUã®å¾—ç‚¹ãŒ22ä»¥ä¸Šã®å ´åˆtrueã‚’è¿”ã™
-	bool isBurst() const
-	{
-		return CpuScore >= BURST_SCORE;
-	}
-
-	//CPUã®å¾—ç‚¹ã‚’è¿”ã™
-	int getScore() const
-	{
-		return CpuScore;
-	}
+    //CPU‚Ì“¾“_‚ª21‚Ìê‡true‚ğ•Ô‚·
+    bool isTwentyOne() const
+    {
+        return CpuScore == WIN_SCORE;
+    }
+    //CPU‚Ì“¾“_‚ª22ˆÈã‚Ìê‡true‚ğ•Ô‚·
+    bool isBurst() const
+    {
+        return CpuScore >= BURST_SCORE;
+    }
+    //CPU‚Ì“¾“_‚ğ•Ô‚·
+    int getScore() const
+    {
+        return CpuScore;
+    }
 };
-

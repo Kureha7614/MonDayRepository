@@ -2,14 +2,14 @@
 
 CPU::CPU()
 {
-	//åˆæœŸåŒ–
+	//‰Šú‰»
 	CpuScore = INIT_SCORE;
 }
 
 CPU::~CPU()
 {
 }
-//å¾—ç‚¹ã‚’åŠ ç®—
+//“¾“_‚ğ‰ÁZ
 void CPU::addScore(int add)
 {
 	CpuScore += add;

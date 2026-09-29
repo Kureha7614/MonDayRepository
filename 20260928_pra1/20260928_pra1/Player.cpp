@@ -1,40 +1,45 @@
 #include "Player.h"
-#include"config.h"
-#include<iostream>
+#include <iostream>
+#include <sstream>
+#include <string>
 
 Player::Player()
 {
-	//åˆæœŸåŒ–
-	PlayerScore = INIT_SCORE;
+    //‰Šú‰»
+    Input = INPUT_NOT_DRAW;
+    PlayerScore = INIT_SCORE;
 }
 
 Player::~Player()
 {
-	//ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+    //ƒfƒXƒgƒ‰ƒNƒ^
 }
 
-//ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã‹å¼•ã‹ãªã„ã‹ã®å…¥åŠ›
+//ƒJ[ƒh‚ðˆø‚­‚©ˆø‚©‚È‚¢‚©‚Ì“ü—Í
 int Player::inputDraw()
 {
-	std::cin >> Input;
-	//ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã‹å¼•ã‹ãªã„ã‹ã®å…¥åŠ›
-	if (Input == INPUT_DRAW)
-	{
-		return INPUT_DRAW;
-	}
-	else if (Input == INPUT_NOT_DRAW)
-	{
-		return INPUT_NOT_DRAW;
-	}
-	else
-	{
-		return -1;
-	}
-	return 0;
-}
-//å¾—ç‚¹ã‚’åŠ ç®—
-void Player::addScore(int add)
-{
-	PlayerScore += add;
+    // 0‚©1‚¾‚¯‚ª“ü—Í‚³‚ê‚½‚©Šm”F‚·‚é
+    std::string line;
+    if (!std::getline(std::cin, line))
+    {
+        // “ü—Í‚ªI‚í‚Á‚½ê‡‚Íˆø‚©‚È‚¢
+        return INPUT_NOT_DRAW;
+    }
+    std::istringstream input(line);
+    char extra;
+    if (!(input >> Input) || (input >> extra))
+    {
+        return -1;
+    }
+    if (Input == INPUT_DRAW || Input == INPUT_NOT_DRAW)
+    {
+        return Input;
+    }
+    return -1;
 }
 
+//“¾“_‚ð‰ÁŽZ
+void Player::addScore(int add)
+{
+    PlayerScore += add;
+}

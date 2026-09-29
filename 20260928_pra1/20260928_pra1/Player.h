@@ -1,41 +1,34 @@
 #pragma once
 #include "config.h"
-#include <iostream>
 
 class Player
 {
 private:
-	//ã·ã‚Œã„ã‚„ãƒ¼ã®å…¥åŠ›
-	int Input;
-	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®å¾—ç‚¹
-	int PlayerScore;
+    //‚Õ‚ê‚¢‚â[‚Ì“ü—Í
+    int Input;
+    //ƒvƒŒƒCƒ„[‚Ì“¾“_
+    int PlayerScore;
 public:
-	
-	//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
-	Player();
-	~Player();
-
-	//ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã‹å¼•ã‹ãªã„ã‹ã®å…¥åŠ›
-	int inputDraw();
-	
-	//å¾—ç‚¹ã‚’åŠ ç®—
-	void addScore(int add);
-
-	//ã·ã‚Œã„ã‚„ãƒ¼ã®å¾—ç‚¹ãŒ21ã®å ´åˆtrueã‚’è¿”ã™
-	bool isTwentyOne() const
-	{ 
-		return PlayerScore == WIN_SCORE; 
-	}
-	//ã·ã‚Œã„ã‚„ãƒ¼ã®å¾—ç‚¹ãŒ22ä»¥ä¸Šã®å ´åˆtrueã‚’è¿”ã™
-	bool isBurst() const
-	{
-		return PlayerScore >= BURST_SCORE;
-	}
-	//ã·ã‚Œã„ã‚„ãƒ¼ã®å¾—ç‚¹ã‚’è¿”ã™
-	int getScore() const
-	{
-		std::cout << "PlayerScore: " << PlayerScore << std::endl;
-		return PlayerScore;
-	}
+    //ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    Player();
+    ~Player();
+    //ƒJ[ƒh‚ğˆø‚­‚©ˆø‚©‚È‚¢‚©‚Ì“ü—Í
+    int inputDraw();
+    //“¾“_‚ğ‰ÁZ
+    void addScore(int add);
+    //‚Õ‚ê‚¢‚â[‚Ì“¾“_‚ª21‚Ìê‡true‚ğ•Ô‚·
+    bool isTwentyOne() const
+    {
+        return PlayerScore == WIN_SCORE;
+    }
+    //‚Õ‚ê‚¢‚â[‚Ì“¾“_‚ª22ˆÈã‚Ìê‡true‚ğ•Ô‚·
+    bool isBurst() const
+    {
+        return PlayerScore >= BURST_SCORE;
+    }
+    //‚Õ‚ê‚¢‚â[‚Ì“¾“_‚ğ•Ô‚·
+    int getScore() const
+    {
+        return PlayerScore;
+    }
 };
-

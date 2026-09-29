@@ -1,27 +1,27 @@
 #pragma once
 
-//åˆæœŸã‚¹ã‚³ã‚¢
+//‰ŠúƒXƒRƒA
 const int INIT_SCORE = 0;
-//å‹åˆ©å¾—ç‚¹
+//Ÿ—˜“¾“_
 const int WIN_SCORE = 21;
-//ãƒãƒ¼ã‚¹ãƒˆå¾—ç‚¹
+//ƒo[ƒXƒg“¾“_
 const int BURST_SCORE = 22;
-//CPUãŒè‡ªå‹•çš„ã«å¼•ãå¾—ç‚¹
+//CPU‚ªŽ©“®“I‚Éˆø‚­“¾“_
 const int CPU_DRAW_SCORE = 15;
 
-//ã‚«ãƒ¼ãƒ‰ã®æœ€å°å€¤
+//ƒJ[ƒh‚ÌÅ¬’l
 const int MIN_CARD = 1;
-//ã‚«ãƒ¼ãƒ‰ã®æœ€å¤§å€¤
+//ƒJ[ƒh‚ÌÅ‘å’l
 const int MAX_CARD = 11;
-//åŒã˜æ•°å­—ã®ã‚«ãƒ¼ãƒ‰ã®æžšæ•°
+//“¯‚¶”Žš‚ÌƒJ[ƒh‚Ì–‡”
 const int CARD_NUM = 4;
-//ã‚«ãƒ¼ãƒ‰ã®ç·åˆæžšæ•°
+//ƒJ[ƒh‚Ì‘‡–‡”
 const int CARD_TOTAL = 44;
 
-//åˆæœŸã‚«ãƒ¼ãƒ‰
+//‰ŠúƒJ[ƒh
 const int INIT_CARD = 2;
 
-//ã·ã‚Œã„ã‚„ãƒ¼ã®å…¥åŠ›
-//0:å¼•ã :1å¼•ã‹ãªã„
+//‚Õ‚ê‚¢‚â[‚Ì“ü—Í
+//0:ˆø‚­ :1ˆø‚©‚È‚¢
 const int INPUT_DRAW = 0;
 const int INPUT_NOT_DRAW = 1;
