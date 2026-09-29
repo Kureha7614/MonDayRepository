@@ -9,7 +9,7 @@ CPU::CPU()
 CPU::~CPU()
 {
 }
-
+//得点を加算
 void CPU::addScore(int add)
 {
 	CpuScore += add;

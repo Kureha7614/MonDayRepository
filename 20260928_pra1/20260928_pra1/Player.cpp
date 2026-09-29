@@ -13,7 +13,7 @@ Player::~Player()
 	//デストラクタ
 }
 
-
+//カードを引くか引かないかの入力
 int Player::inputDraw()
 {
 	std::cin >> Input;
@@ -32,7 +32,7 @@ int Player::inputDraw()
 	}
 	return 0;
 }
-
+//得点を加算
 void Player::addScore(int add)
 {
 	PlayerScore += add;
