@@ -10,16 +10,16 @@ int main(void)
 	cout << "プレイヤーの名前を入力してください" << endl;
 	cin >> playerName;
 
-	string bossName;
+	string name;
 	cout << "ボスの名前を入力してください" << endl;
-	cin >> bossName;
+	
 
 	string enemyName;
 	cout << "敵の名前を入力してください" << endl;
 	cin >> enemyName;
 
 	//ボス
-	Boss boss(bossName);
+	Boss boss(name);
 	cout << boss.GetName() << endl;
 	boss.Attack();
 	//プレイヤー
