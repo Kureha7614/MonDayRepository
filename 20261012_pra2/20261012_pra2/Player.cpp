@@ -2,11 +2,10 @@
 #include<iostream>
 Player::Player(std::string name) :Character(name)
 {
-	std::cout << "ƒvƒŒƒCƒ„[‚Ì–¼‘O‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢" << std::endl;
-	std::cin >> name;
+
 }
 
 void Player::Attack()
 {
-	std::cout << GetName() << "‚ÍŒ•‚ÅUŒ‚‚µ‚½" << std::endl;
+	std::cout  << "‚ÍŒ•‚ÅUŒ‚‚µ‚½" << std::endl;
 }

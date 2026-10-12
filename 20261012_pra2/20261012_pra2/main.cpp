@@ -1,27 +1,33 @@
 #include<iostream>
-#include"Character.h"
 #include"Boss.h"
 #include"Player.h"
 #include"Enemy.h"
 using namespace std;
 int main(void)
 {
-	//コンストラクタ
-	Character character("眠い");
-	Boss boss("名前");
-	Player player("名前");
-	Enemy enemy("名前");
-	//名前の表示と攻撃
-	//キャラクター
-	cout << character.GetName() << endl;
-	character.Attack();
+	//名前を入力してもらう
+	string playerName;
+	cout << "プレイヤーの名前を入力してください" << endl;
+	cin >> playerName;
+
+	string bossName;
+	cout << "ボスの名前を入力してください" << endl;
+	cin >> bossName;
+
+	string enemyName;
+	cout << "敵の名前を入力してください" << endl;
+	cin >> enemyName;
+
 	//ボス
+	Boss boss(bossName);
 	cout << boss.GetName() << endl;
 	boss.Attack();
 	//プレイヤー
+	Player player(playerName);		
 	cout << player.GetName() << endl;
 	player.Attack();
 	//敵
+	Enemy enemy(enemyName);
 	cout << enemy.GetName() << endl;
 	enemy.Attack();
 	return 0;
