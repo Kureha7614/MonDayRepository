@@ -13,6 +13,6 @@ public:
 	/// <summary>
 	/// 戦闘を開始する
 	/// </summary>
-	void StartBattle();
+	void StartBattle(Character* player, Character* enemy, Character* boss);
 };
 

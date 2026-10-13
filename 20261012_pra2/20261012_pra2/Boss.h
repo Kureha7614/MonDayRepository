@@ -1,5 +1,8 @@
 #pragma once
 #include"Character.h"
+#include "Boss.h"
+#include"Player.h"
+#include"Enemy.h"
 class Boss :public Character
 {
 public:
