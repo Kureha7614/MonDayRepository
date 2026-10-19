@@ -2,7 +2,7 @@
 class MagicalGirl
 {
 protected:
-	MagicalGirl();
+	MagicalGirl() = default;
 public:
 	virtual void Fight() = 0;
 	virtual void ShowProfile();
