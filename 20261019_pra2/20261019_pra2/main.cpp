@@ -6,14 +6,16 @@ using namespace std;
 
 int main(void)
 {
-	MagicalGirl* magicalgirl;
+	MagicalGirl* magicalgirls[2];
 	Madoka madoka;
 	Homura homura;
-	magicalgirl[0] = &ma
+	magicalgirls[0] = &madoka;
+	magicalgirls[1] = &homura;
 
 	for(int i = 0;i < 2;i++)
 	{
-		madoka ->Fight()
+		magicalgirls[i]->Fight();
+		magicalgirls[i]->ShowProfile();
 	}
 	return 0;
 }

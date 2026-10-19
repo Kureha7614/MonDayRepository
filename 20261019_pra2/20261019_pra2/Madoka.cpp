@@ -3,10 +3,10 @@
 using namespace std;
 void Madoka::Fight()
 {
-	cout << "ã‚†ã¿ã§æ”»æ’ƒ" << endl;
+	cout << "‚ä‚Ý‚ÅUŒ‚" << endl;
 }
 
 void Madoka::ShowProfile()
 {
-	cout << "é¹¿ç›®ã¾ã©ã‹" << endl;
+	cout << "Ž­–Ú‚Ü‚Ç‚©" << endl;
 }

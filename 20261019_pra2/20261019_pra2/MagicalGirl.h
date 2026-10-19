@@ -1,7 +1,7 @@
 #pragma once
 class MagicalGirl
 {
-private:
+protected:
 	MagicalGirl();
 public:
 	virtual void Fight() = 0;

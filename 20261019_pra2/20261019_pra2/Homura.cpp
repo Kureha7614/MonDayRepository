@@ -3,10 +3,10 @@
 using namespace std;
 void Homura::Fight()
 {
-	cout << "éŠƒã§æ”»æ’ƒ" << endl;
+	cout << "e‚ÅUŒ‚" << endl;
 }
 
 void Homura::ShowProfile()
 {
-	cout << "æšç¾Žã»ã‚€ã‚‰" << endl;
+	cout << "‹Å”ü‚Ù‚Þ‚ç" << endl;
 }

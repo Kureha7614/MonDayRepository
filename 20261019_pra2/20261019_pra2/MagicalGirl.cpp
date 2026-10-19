@@ -4,10 +4,10 @@ using namespace std;
 
 void MagicalGirl::Fight()
 {
-	cout << "æ”»æ’ƒ" << endl;
+	cout << "UŒ‚" << endl;
 }
 
 void MagicalGirl::ShowProfile()
 {
-	cout << "ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«" << endl;
+	cout << "ƒvƒƒtƒB[ƒ‹" << endl;
 }
